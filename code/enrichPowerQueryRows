@@ -7,26 +7,27 @@ import math
 bucket_size = 4
 
 # Batch mode calls enrichment api in batches rather than on call at a time 'single' will do one call at a time to the api. Both submit batches to DS api 
-mode = "batch" 
+mode = "single" 
 
 # Run this powerquery and for each row returned do something. 
-query = """serverHost='elk-integrator' NOT(src matches ('^10', '^0', '^fe80', '::', '^172', '^192')) src = * |group count = count(src) by src |sort -count |columns src|limit 10 """
+query = """serverHost='elk-integrator' NOT(src matches ('^10', '^0', '^fe80', '::', '^172', '^192')) src = * |group count = count(src) by src |sort -count |columns src"""
 
 # Column index to lookup if powerquery. If you have a response that has columns: ip, port, server, and you want to lookup 'server' you would set this to 2. ip would be 0 
 key = 0
 
 #api keys.
-ds_read_token = "*************************"
-ds_write_token = "*************************"
-ipstack_key = "*************************"
-
+ipstack_key = ""
+mm_key = ""
+ds_write_key = ""
+ds_read_key = ""
 
 def pq():
+    ds_read_token = ""
     conn = http.client.HTTPSConnection("app.scalyr.com")
     payload = json.dumps({
-      "token": ds_read_token,
+      "token": ds_read_key,
       "query": query,
-      "startTime": "4h",
+      "startTime": "5m",
       "endTime": "0h"
     })
     print("payload: %s" %(payload))
@@ -40,12 +41,12 @@ def pq():
     return j
 
 def writeToDS(payload):
-    print("writing")
+    print("writing to DS")
     conn = http.client.HTTPSConnection("app.scalyr.com")
     headers = {
       'Content-Type': 'application/json',
     }
-    url = "/api/uploadLogs?host=foo&parser=foo&logfile=foo&token=" + ds_write_token
+    url = "/api/uploadLogs?host=enrich&parser=foo&logfile=enrich&token=" + ds_write_key
     conn.request("POST", url, str(payload), headers)
     res = conn.getresponse()
     data = res.read()
@@ -63,7 +64,24 @@ def enrich_ip(ip):
     print(data.decode("utf-8"))
     data = data.decode("utf-8")
     return data
+    
+def enrich_max_mind(ip):
+    conn = http.client.HTTPSConnection("geoip.maxmind.com")
+    payload = ''
+    headers = {
+      'Authorization': 'Basic ' + mm_key
+    }
+    path = "/geoip/v2.1/city/" + ip
+    conn.request("GET", path, payload, headers)
+    res = conn.getresponse()
+    data = res.read()
+    return data.decode('ascii', 'ignore')
+
 def enrich_batch(ips):
+#    payload = [
+#      "208.80.152.201",
+#      "91.198.174.192"
+#    ]
     payload = ips
     conn = http.client.HTTPSConnection("ip-api.com")
     payload = json.dumps(payload)
@@ -91,6 +109,8 @@ def lambda_handler(event, context):
     
     # loop through each row and perform an action for each. Then gather response into chunks and send them to dataset. 
     if mode == "single":
+        print("single mode")
+        time.sleep(0.01)
         events = ""
         bucket_counter = 1
         buckets = 0
@@ -105,14 +125,14 @@ def lambda_handler(event, context):
             print("bucket_counter=%s" %(bucket_counter))
             remaining_buckets = expected - buckets
             print("remianin buckets: %s" %(remaining_buckets))
-            ip = j['values'][i][key]
-            data = ip + ": " + str(i)
+            ip = str(j['values'][i][key])
+            #data = ip + ": " + str(i)
             #lookup data from external api 
             #data = enrich_ip(ip)
-            
+            data = str(enrich_max_mind(ip))
             #testing just print data
-            data = "event-%s: %s" %(i, ip) 
-            
+            e = "event-%s: %s" %(i, ip) 
+            print("event is: %s" %(e))
       
             if not events:
               events = data
