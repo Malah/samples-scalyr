@@ -78,10 +78,6 @@ def enrich_max_mind(ip):
     return data.decode('ascii', 'ignore')
 
 def enrich_batch(ips):
-#    payload = [
-#      "208.80.152.201",
-#      "91.198.174.192"
-#    ]
     payload = ips
     conn = http.client.HTTPSConnection("ip-api.com")
     payload = json.dumps(payload)
