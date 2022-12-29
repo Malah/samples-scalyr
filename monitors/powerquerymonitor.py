@@ -16,7 +16,7 @@
 # An example ScalyrMonitor plugin to demonstrate how they can be written.
 #
 # Note, this can be run in standalone mode by:
-#     python -m scalyr_agent.run_monitor -c "{"gauss_mean": 0.5,"command":"df = pq[pq.c > 10]", "powerquery": "serverHost=*|group c = count() by serverHost", "token":"test"}" scalyr_agent.builtin_monitors.test_monitor
+#     python -m scalyr_agent.run_monitor -c "{"powerquery": "serverHost=*|group c = count() by serverHost", "token":"read-log-key"}" scalyr_agent.builtin_monitors.test_monitor
 #
 # author:  Steven Czerwinski <czerwin@scalyr.com>
 
