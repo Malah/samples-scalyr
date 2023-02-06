@@ -16,7 +16,7 @@ logs: [
   {
         module:  "scalyr_agent.builtin_monitors.shell_monitor",
         id:      "cmd",
-        command: "powershell -command \"Get-Process | Out-File -FilePath '%programfiles(x86)%\\Scalyr\\log\\process-metrics-full.log' -Append\""
+        command: "powershell -command \"Get-Process | Out-File -Encoding ASCII -FilePath '%programfiles(x86)%\\Scalyr\\log\\process-metrics-full.log' -Append\""
         max_characters: "10"
 	      sample_interval: 60
       }
