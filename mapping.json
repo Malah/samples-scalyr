@@ -27,7 +27,7 @@
 	"name": "Microservices",
         "path":"microservice.json",
         "dashboard": "webserver.conf",
-	"parser": "tracing_microservice",
+	"parser": "tracing_microservice.conf",
 	"links": "microservice.conf"
         },
     "cloudwatch": {
