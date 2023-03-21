@@ -1,0 +1,46 @@
+{
+    "accesslog": {
+	"name": "Access Log",
+        "path": "accesslog.json",
+        "dashboard": "webserver.conf",
+	"parser": "accessLog.conf"
+    },
+    "paloalto": {
+	"name": "Palo Alto Traffic, Threat, Security Log",
+        "path": "paloalto.csv",
+        "dashboard": "palo.conf",
+	"parser": "firewall.conf"
+    },
+    "vpc_flow": {
+	"name": "VPC Flow Log",
+        "path":"vpc.csv",
+        "dashboard": "aws.conf",
+	"parser": "vpc.conf"
+        },
+    "windows": {
+	"name": "Windows Event Log",
+        "path":"windowseventlog.json",
+        "dashboard": "windows.conf",
+	"parser": "windows_event_log.conf"
+        },
+    "dhcp": {
+	"name": "DHCP Logs",
+        "path": "dhcp.csv",
+        "dashboard": "dhcp.conf",
+	"parser": "dhcp.conf"
+        },
+    "microservice": {
+	"name": "Microservices",
+        "path":"microservice.json",
+        "dashboard": "webserver.conf",
+	"parser": "microservice.conf",
+	"links": "microservice.conf"
+        },
+    "cloudwatch": {
+	"name": "Cloudwatch",
+        "path": "cloudwatch.csv",
+        "dashboard": "aws.conf",
+	"parser": "cloudwatch.conf"
+        }
+
+}
