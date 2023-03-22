@@ -32,7 +32,7 @@
         },
     "cloudwatch": {
 	"name": "Cloudwatch",
-        "path": "cloudwatch.csv",
+        "path": "cloudwatch_metrics.json",
         "dashboard": "aws.conf",
 	"parser": "cloudwatchLogs.conf"
         }
