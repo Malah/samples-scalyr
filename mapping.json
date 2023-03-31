@@ -42,7 +42,7 @@
         "dashboard": "aws.conf",
 	"parser": "agent-metrics.conf"
         },
-    "traffic": {
+    "web_traffic": {
 	"name": "Traffic Log",
         "path": "traffic.json",
         "dashboard": "traffic.conf",
