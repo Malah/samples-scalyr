@@ -35,6 +35,12 @@
         "path": "cloudwatch_metrics.json",
         "dashboard": "aws.conf",
 	"parser": "cloudwatchLogs.conf"
+        },
+    "ec2": {
+	"name": "EC2 Metrics",
+        "path": "ec2.json",
+        "dashboard": "aws.conf",
+	"parser": "agent-metrics.conf"
         }
 
 }
