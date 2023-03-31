@@ -41,6 +41,12 @@
         "path": "ec2.json",
         "dashboard": "aws.conf",
 	"parser": "agent-metrics.conf"
+        },
+    "traffic": {
+	"name": "Traffic Log",
+        "path": "traffic.json",
+        "dashboard": "traffic.conf",
+	"parser": "agent-metrics.conf"
         }
 
 }
