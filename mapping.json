@@ -1,12 +1,12 @@
 {
     "accesslog": {
-	"name": "Access Log",
+	"name": "AccessLog",
         "path": "accesslog.json",
         "dashboard": "webserver.conf",
 	"parser": "accessLog.conf"
     },
     "paloalto": {
-	"name": "Palo Alto Traffic, Threat, Security Log",
+	"name": "Palo Alto Firewall",
         "path": "paloalto.csv",
         "dashboard": "palo.conf",
 	"parser": "paloalto.conf"
@@ -24,7 +24,7 @@
 	"parser": "dhcp.conf"
         },
     "microservice": {
-	"name": "Microservices",
+	"name": "MicroService",
         "path":"microservice.json",
         "dashboard": "webserver.conf",
 	"parser": "tracing_microservice.conf",
@@ -43,7 +43,7 @@
 	"parser": "agent-metrics.conf"
         },
     "web_traffic": {
-	"name": "Traffic Log",
+	"name": "Traffic",
         "path": "traffic.json",
         "dashboard": "traffic.conf",
 	"parser": "agent-metrics.conf"
