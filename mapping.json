@@ -53,6 +53,12 @@
         "path": "vpn.json",
         "dashboard": "vpn.conf",
 	"parser": "pa-vpn.conf"
+        },
+    "lambda": {
+	"name": "Lambda",
+        "path": "lambda.json",
+        "dashboard": "lambda.conf",
+	"parser": "lambda.conf"
         }
 
 
