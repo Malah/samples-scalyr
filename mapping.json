@@ -47,6 +47,13 @@
         "path": "traffic.json",
         "dashboard": "traffic.conf",
 	"parser": "agent-metrics.conf"
+        },
+    "web_traffic": {
+	"name": "VPN",
+        "path": "vpn.json",
+        "dashboard": "vpn.conf",
+	"parser": "pa-vpn.conf"
         }
+
 
 }
