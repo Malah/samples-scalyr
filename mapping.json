@@ -59,7 +59,7 @@
         "path": "lambda.json",
         "dashboard": "aws.conf",
 	"parser": "spam-detection.conf"
-        }
+        },
     "windows_metrics": {
 	"name": "Windows System Metrics",
         "path": "windows-metrics.json",
