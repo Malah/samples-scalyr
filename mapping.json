@@ -60,6 +60,12 @@
         "dashboard": "aws.conf",
 	"parser": "spam-detection.conf"
         }
+    "windows_metrics": {
+	"name": "Windows System Metrics",
+        "path": "windows-metrics.json",
+        "dashboard": "windows-system-metrics.conf",
+	"parser": "windows_event_log.conf"
+        }
 
 
 }
