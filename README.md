@@ -12,9 +12,11 @@ Scalyr sample of JSON for a starting point to use in your projects.
  Help and Documentation can be found on Scalyr. https://app.scalyr.com/help/
 
 
-This data will flow into our log generator: toolkit.s1.ninja/generate
 
-# to add an entry
+**This data will flow into our log generator: toolkit.s1.ninja/generate**
+
+# to add a new entry
+
 1.  Export a powerquery as json, or upload a csv of your data (csv data doesnt have types so i discourage the use of csv if you want to graph integers)
 2.  upload to the `/logs` directory
 3.  add dashbaord to `/dashboards` directory
