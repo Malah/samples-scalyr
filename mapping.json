@@ -67,7 +67,7 @@
 	"parser": "windows_event_log.conf"
         },
     "lambda_errors": {
-	"name": "Lambda Erros",
+	"name": "Lambda Errors",
         "path": "lambda-errors.json",
         "dashboard": "aws.conf",
 	"parser": "spam-detection.conf"
