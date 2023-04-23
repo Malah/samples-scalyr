@@ -62,7 +62,7 @@
         },
     "windows_metrics": {
 	"name": "Windows System Metrics",
-        "path": "windows-metrics.json",
+        "path": "windows_performance_monitor.json",
         "dashboard": "windows-system-metrics.conf",
 	"parser": "windows_event_log.conf"
         },
