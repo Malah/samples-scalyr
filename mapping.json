@@ -71,6 +71,12 @@
         "path": "lambda-errors.json",
         "dashboard": "aws.conf",
 	"parser": "spam-detection.conf"
+        },
+    "cloudwatch_metrics_2": {
+	"name": "Cloudwatch EC2 System Metrics",
+        "path": "cloudwatch_metrics_cpu_mem_disk.json",
+        "dashboard": "aws.conf",
+	"parser": "cloudwatchLogs.conf"
         }
 
 
