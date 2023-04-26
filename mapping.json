@@ -83,6 +83,12 @@
         "path": "cloudwatch_metrics_cpu_mem_disk.json",
         "dashboard": "aws.conf",
 	"parser": "cloudwatchLogs.conf"
+        },
+    "log4shell": {
+	"name": "Log4Shell JNDI logs",
+        "path": "log4shell.json",
+        "dashboard": "minecraft.conf",
+	"parser": "json.conf"
         }
 
 
