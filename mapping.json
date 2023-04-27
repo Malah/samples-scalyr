@@ -5,12 +5,6 @@
         "dashboard": "webserver.conf",
 	"parser": "accessLog.conf"
     },
-    "paloalto": {
-	"name": "Palo Alto Firewall",
-        "path": "paloalto.json",
-        "dashboard": "palo.conf",
-	"parser": "paloalto.conf"
-    },
     "vpc_flow": {
 	"name": "VPC Flow Log",
         "path":"vpc.csv",
