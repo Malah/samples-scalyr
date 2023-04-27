@@ -7,7 +7,7 @@
     },
     "paloalto": {
 	"name": "Palo Alto Firewall",
-        "path": "palo-alto-firewall.json",
+        "path": "paloalto.json",
         "dashboard": "palo.conf",
 	"parser": "paloalto.conf"
     },
