@@ -86,7 +86,7 @@
         },
     "invalid-cache-errors": {
 	"name": "microservice errors",
-        "path": "invalid-cache-errors.log",
+        "path": "invalid-cache-errors.json",
         "dashboard": "webserver.conf",
 	"parser": "tracing_microservice.conf"
         }
