@@ -83,6 +83,12 @@
         "path": "log4shell.json",
         "dashboard": "minecraft.conf",
 	"parser": "json.conf"
+        },
+    "invalid-cache-errors": {
+	"name": "microservice errors",
+        "path": "invalid-cache-errors.log",
+        "dashboard": "webserver.conf",
+	"parser": "tracing_microservice.conf"
         }
 
 
