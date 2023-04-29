@@ -89,7 +89,11 @@
         "path": "invalid-cache-errors.json",
         "dashboard": "webserver.conf",
 	"parser": "tracing_microservice.conf"
+        },
+    "palo": {
+	"name": "Palo Alto Panorama Traffic",
+        "path": "palo_traffic_1.csv",
+        "dashboard": "firewall-generic.conf",
+	"parser": "paloalto.conf"
         }
-
-
 }
