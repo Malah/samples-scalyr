@@ -95,5 +95,11 @@
         "path": "palo_traffic_1.csv",
         "dashboard": "firewall-generic.conf",
 	"parser": "paloalto.conf"
+        },
+    "winEventLog": {
+	"name": "Windows Event Log",
+        "path": "windows_event_log.json",
+        "dashboard": "skylight-inspector.conf",
+	"parser": "json.conf"
         }
 }
