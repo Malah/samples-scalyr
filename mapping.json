@@ -98,7 +98,7 @@
         },
     "winEventLog": {
 	"name": "Windows Event Log",
-        "path": "windowseventlog.json",
+        "path": "windows_event_log.json",
         "dashboard": "skylight-inspector.conf",
 	"parser": "json.conf"
         },
