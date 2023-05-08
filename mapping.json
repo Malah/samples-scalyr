@@ -101,5 +101,11 @@
         "path": "windows_event_log.json",
         "dashboard": "skylight-inspector.conf",
 	"parser": "json.conf"
+        },
+    "salesforce": {
+	"name": "Salesforce",
+        "path": "salesforce.csv",
+        "dashboard": "salesforce.conf",
+	"parser": "json.conf"
         }
 }
