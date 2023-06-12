@@ -108,10 +108,22 @@
         "dashboard": "salesforce.conf",
 	"parser": "json.conf"
         },
-    "aad": {
-	"name": "AAD User Info",
+    "azure-ad": {
+	"name": "Azure AD User Info",
         "path": "AADUSerInfo.csv",
-        "dashboard": "aad.conf",
+        "dashboard": "azure-ad.conf",
+	"parser": "json.conf"
+        },
+    "okta-insights": {
+	"name": "Okta Insights",
+        "path": "okta_sample.csv",
+        "dashboard": "okta_insights.conf",
+	"parser": "json.conf"
+        },
+    "audit": {
+	"name": "Audit",
+        "path": "Audit.csv",
+        "dashboard": "audit.conf",
 	"parser": "json.conf"
         }
 }
