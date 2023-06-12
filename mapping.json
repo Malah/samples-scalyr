@@ -37,7 +37,7 @@
 	"parser": "agent-metrics.conf"
         },
     "web_traffic": {
-	"name": "Traffic",
+	"name": "Web Traffic",
         "path": "traffic.json",
         "dashboard": "traffic.conf",
 	"parser": "agent-metrics.conf"
@@ -54,6 +54,12 @@
         "dashboard": "aws.conf",
 	"parser": "spam-detection.conf"
         },
+    "lambda_errors": {
+	"name": "Lambda Errors",
+        "path": "lambda-errors.json",
+        "dashboard": "aws.conf",
+	"parser": "spam-detection.conf"
+        },
     "windows_metrics": {
 	"name": "Windows System Metrics",
         "path": "windows_performance_monitor.json",
@@ -65,12 +71,6 @@
         "path": "windows_performance_monitor_2.json",
         "dashboard": "windows-system-metrics.conf",
 	"parser": "windows_event_log.conf"
-        },
-    "lambda_errors": {
-	"name": "Lambda Errors",
-        "path": "lambda-errors.json",
-        "dashboard": "aws.conf",
-	"parser": "spam-detection.conf"
         },
     "cloudwatch_metrics_2": {
 	"name": "Cloudwatch EC2 System Metrics",
@@ -85,7 +85,7 @@
 	"parser": "json.conf"
         },
     "invalid-cache-errors": {
-	"name": "microservice errors",
+	"name": "MicroService errors",
         "path": "invalid-cache-errors.json",
         "dashboard": "webserver.conf",
 	"parser": "tracing_microservice.conf"
@@ -108,10 +108,22 @@
         "dashboard": "salesforce.conf",
 	"parser": "json.conf"
         },
-    "aad": {
-	"name": "AAD User Info",
+    "azure-ad": {
+	"name": "Azure AD User Info",
         "path": "AADUSerInfo.csv",
-        "dashboard": "aad.conf",
+        "dashboard": "azure-ad.conf",
+	"parser": "json.conf"
+        },
+    "okta-insights": {
+	"name": "Okta Insights",
+        "path": "okta_sample.csv",
+        "dashboard": "okta_insights.conf",
+	"parser": "json.conf"
+        },
+    "audit": {
+	"name": "Audit",
+        "path": "Audit.csv",
+        "dashboard": "audit.conf",
 	"parser": "json.conf"
         }
 }
