@@ -128,7 +128,7 @@
         },
         "zscaler": {
                 "name": "zScaler",
-                "path": "zscaler_log_sample.json",
+                "path": "zscaler_log_sample.csv",
                 "dashboard": "zscaler.conf",
                 "parser": "json.conf"
         }
