@@ -108,6 +108,12 @@
                 "dashboard": "vpn.conf",
                 "parser": "pa-vpn.conf"
         },
+        "palo-firewall-ocsf": {
+                "name": "Palo Alto Firewall - OCSF",
+                "path": "no_sample_data.csv",
+                "dashboard": "palo_firewall_ocsf.conf",
+                "parser": "palo-alto-firewall-ocsf.conf"
+        },
         "palo": {
                 "name": "Palo Alto Panorama Traffic",
                 "path": "palo_traffic_1.csv",
