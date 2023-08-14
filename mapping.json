@@ -113,6 +113,12 @@
                 "path": "no_sample_data.csv",
                 "dashboard": "palo_firewall_ocsf.conf",
                 "parser": "palo-alto-firewall-ocsf.conf"
+        },        
+        "palo-firewall-ocsf-tabbed": {
+                "name": "Palo Alto Firewall - OCSF - Tabbed",
+                "path": "no_sample_data.csv",
+                "dashboard": "palo_firewall_ocsf_tabbed.conf",
+                "parser": "palo-alto-firewall-ocsf.conf"
         },
         "palo": {
                 "name": "Palo Alto Panorama Traffic",
