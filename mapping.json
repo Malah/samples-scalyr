@@ -1,7 +1,7 @@
 {
         "audit": {
                 "name": "Audit",
-                "path": "Audit.csv",
+                "path": "audit.csv",
                 "dashboard": "audit.conf",
                 "parser": "json.conf"
         },
