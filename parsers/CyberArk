@@ -1,0 +1,39 @@
+{
+  attributes: {
+    
+    dataset: "cyberark"
+  },
+  patterns: {
+    spaceOrEOL: " |$",
+    tsPattern: "[\\w\\s\\d]+\\s+[\\d+:]+",
+    HeaderVer: "[A-Z:0-9]+",
+    DeviceVendor: "[a-z|A-Z]+",
+    DeviceProduct: "[A-Z]+",
+    DeviceVersion: "[0-9.0-9]+",
+    eventtype: "[0-9|]+",
+    eventname: "[\\w\\s]+",
+    severity: "[|0-9]+",
+    SuspiciousSessionActivity: "[a-z/A-Z0-9]+"
+  },
+  formats: [
+    {
+      format: ".*$_=identifier$=$_=quoteOrSpace$",
+      repeat: true
+    
+    }, {
+      id: "CEF",
+      attributes: {
+        Infomation: "Log CyberArk, PTA",
+        cs1Label: "ExtraData",
+        cs2Label: "EventID",
+        cs3Label: "PTALink",
+        cs4Label: "ExternalLink",
+        cs5Label: "SuspiciousSessionActivity",
+        deviceCustomDate1Label: "DetectionDate"
+      }
+      
+      format: "$timestamp=tsPattern$ $ip$ $HeaderVer=HeaderVer$|\"$Device{regex=[a-z-A-Z-|-]+}$|$DeviceVersion=DeviceVersion$|$eventtype=eventtype$|$eventname=eventname$|$severity1=severity$|\"suser=$suser$ shost=$shost$ src=$src$ duser=$duser$ dhost=$dhost$ dst=$dst$ cs1=$ExtraData$ .* cs2=$EventID$ .* deviceCustomDate1=$DetectionDate$ .* cs3=$PTALink$ .* cs4=$ExternalLink$ .* cs5=$SuspiciousSessionActivity$",
+
+    },
+  ]
+}
