@@ -37,3 +37,66 @@
     },
   ]
 }
+
+// or
+{
+  /*Final Script
+   *********Created By IT Security ******
+  */
+  attributes: {
+    //  dataset: "json",
+    //  "Information": "PT Hana Bank Indonesia",
+    "dataSource.vendor": "CyberArk",
+    "dataSource.name": "CyberArk Privileged Access Managemeent(PAM)",
+    "dataSource.category": "security",
+  },
+  patterns: {
+    spaceOrEOL: " |$",
+    IP_PTA: "\\d+\\.\\d+\\.\\d+\\.\\d+",
+    tsPattern: "[\\w\\s\\d]+\\s+[\\d+:]+",
+    HeaderVer: "[A-Z:0-9]+",
+    DeviceVendor: "[a-z|A-Z]+",
+    DeviceProduct: "[A-Z]+",
+    DeviceVersion: "[0-9.0-9]+",
+    eventtype: "[0-9|]+",
+    eventname: "[\\w\\s]+",
+    severity: "[|0-9]+",
+    SuspiciousSessionActivity: ".*$_=identifier$=$_=quoteOrSpace$" //"[a-z/A-Z0-9]+"
+  },
+  formats: [
+    {
+      format: ".*$_=identifier$=$_=quoteOrSpace$",
+      repeat: true
+      format: "$DateTime=tsPattern$ $IP.PTA=IP_PTA$ $logformat=HeaderVer$|\"$Device{regex=[a-z-A-Z-|-]+[0-9.0-9]+}$|$Event_Type=eventtype$|$Event_Name=eventname$|$severity.activity=severity$|\"suser=$suser$ shost=$shost$ src=$src$ duser=$duser$ dhost=$dhost$ dst=$dst$ .* cs1=$ExtraData$ .* cs2=$EventID$ .* deviceCustomDate1=$DetectionDate$ .* cs3=$PTALink$ .* cs4=$ExternalLink$ .* cs5=$SuspiciousSessionActivity$",
+      rewrites: [
+        {
+          input: "cs1",
+          output: "ExtraData",
+          match: ".*",
+          replace: "$0"
+        }, {
+          input: "cs2",
+          output: "EventID",
+          match: ".*",
+          replace: "$0"
+        }, {
+          input: "cs3",
+          output: "PTALink",
+          match: ".*",
+          replace: "$0"
+        }, {
+          input: "cs4",
+          output: "ExternalLink",
+          match: ".*",
+          replace: "$0"
+        }, {
+          input: "cs5",
+          output: "SuspiciousSessionActivity",
+          match: ".*",
+          replace: "$0"
+        },
+      ]
+    },
+  ]
+}
+
